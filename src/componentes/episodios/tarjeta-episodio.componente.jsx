@@ -6,16 +6,16 @@ import './tarjeta-episodio.css';
  * Deberás agregar las propiedades necesarias para mostrar los datos de los episodios
  * 
  * 
- * @returns un JSX element 
+ * @returns Un elemento JSX 
  */
-const TarjetaEpisodio = () => {
+const TarjetaEpisodio = ({ episode }) => {
 
     return <div className="tarjeta-episodio">
             <h4>Close Rick-counters of the Rick Kind</h4>
             <div>
                 <span>S01E01</span>
                 <span>Lanzado el: April 7, 2014</span>
-            </div>
+            </div>  
     </div>
 }
 

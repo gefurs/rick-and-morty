@@ -2,11 +2,11 @@ import {Link} from "react-router-dom";
 import './encabezado.css';
 
 /**
- * Encabezado que contiene los links para navegar entre las páginas
+ * Componente que contiene los links para navegar entre las páginas
  *
  * Uso: `<Encabezado />`
  *
- * @returns {JSX.Element}
+ * @returns Un elemento JSX
  */
 const Encabezado = () => {
 
