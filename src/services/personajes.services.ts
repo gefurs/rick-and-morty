@@ -1,4 +1,3 @@
-import Personaje from "../types/personaje.types";
 import Response from "../types/response.types";
 
 /**
@@ -30,18 +29,5 @@ export const buscarPersonajesAPI = async (nombre?: string, page?: number): Promi
     const response = await fetch(`https://rickandmortyapi.com/api/character/${params}&page=${page}`);
     const result = await response.json();
     // console.log(result);
-    return result;
-}
-
-// /**
-//  * Realiza un llamado a la api de Rick and Morty, y devuelve un personaje por su id. 
-//  * @param id - El id del personaje seleccionado.
-//  * @returns Un objeto personaje.
-//  */
-export const listarCapitulosAPI = async (): Promise<Personaje> => {
-    
-    const response = await fetch(`https://rickandmortyapi.com/api/episode`);
-    const result = await response.json();
-    console.log(result);
     return result;
 }

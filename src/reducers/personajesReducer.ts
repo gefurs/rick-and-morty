@@ -22,6 +22,18 @@ const initialState: EstadoPersonajes = {
     error: null
 };
 
+/**
+ * Función reductora para el estado de personajes
+ * 
+ * @param {initialState} state
+ * @param {{
+ *      type: string,
+ *      payload: {
+ *          [string]: string
+ *      }
+ *  }} action
+ * @returns {state}
+ */
 const personajesReducer: Reducer<EstadoPersonajes, PersonajesAcciones> = (state = initialState, action) => {
     switch (action.type) {
         case "LISTAR_PERSONAJES":

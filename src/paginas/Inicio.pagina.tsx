@@ -32,6 +32,7 @@ const PaginaInicio = () => {
 
     const limpiarFiltros = () => {
         setName("");
+        setPage(1);
     }
 
     const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;

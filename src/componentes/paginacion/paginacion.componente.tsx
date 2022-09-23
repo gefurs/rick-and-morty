@@ -7,8 +7,8 @@ import './paginacion.css';
 /**
  * Componente que contiene los botones para paginar
  * 
- * Deberás agregar las propiedades necesarias para que funcione correctamente
- * 
+ * @param {page} props Props con el estado de la página que viene de la página de inicio
+ * @param {setPage} props Props con la función modificadora del estado de la página que viene de la página de inicio
  * 
  * @returns un JSX element 
  */

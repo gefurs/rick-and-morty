@@ -9,6 +9,8 @@ import './boton-favorito.css';
  * 
  * Uso: `<BotonFavorito />`
  * 
+ * @param {personajes} props Props con el estado del personaje que viene de la tarjeta de personaje
+ * 
  * @returns Un elemento JSX 
  */
 

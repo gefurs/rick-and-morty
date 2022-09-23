@@ -1,4 +1,6 @@
-import { TypedUseSelectorHook, useSelector as useReduxSelector } from "react-redux";
+// import { useEffect } from "react";
+// import { buscarCapituloThunk } from "../actions/capitulos.actions";
+import { TypedUseSelectorHook, useDispatch, useSelector as useReduxSelector } from "react-redux";
 import { IRootState } from "../store/store";
 import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 import TarjetaEpisodio from "../componentes/episodios/tarjeta-episodio.componente";
@@ -17,10 +19,16 @@ import "./Detalle.css";
  */
 const PaginaDetalle = () => {
 
+    // const dispatch = useDispatch();
+    // dispatch(buscarCapituloThunk(id));
+
     const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 
     const personaje = useSelector(state => state.personajes.personaje);
-    console.log(personaje);
+    // console.log(personaje.episode);
+
+    // const capitulo = useSelector(state => state.capitulo.capitulo);
+    // console.log(capitulo)
 
     return <div className="container">
         <h3>{personaje.name}</h3>
@@ -37,13 +45,11 @@ const PaginaDetalle = () => {
         </div>
         <h4>Lista de episodios donde apareció el personaje</h4>
         <div className={"episodios-grilla"}>
-
             {personaje.episode.map((episode, index) => {
-                return <TarjetaEpisodio key={index} episode={episode} />
+                return <TarjetaEpisodio key={index} capitulo={episode} />
             })}
         </div>
     </div>
-
 }
 
-export default PaginaDetalle
+export default PaginaDetalle;

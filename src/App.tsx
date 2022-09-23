@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 import PaginaInicio from "./paginas/Inicio.pagina";
@@ -9,7 +9,7 @@ import { store } from "./store/store";
 import {Provider} from "react-redux";
 
 
-function App() {
+const App: FC = () => {
   return (
     <Provider store={store}>
       <div className="App">
