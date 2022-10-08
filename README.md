@@ -10,6 +10,7 @@ El buscador de personajes de Rick and Morty es una aplicación para los fanátic
 :heavy_check_mark: Redux
 :heavy_check_mark: Redux-thunk
 :heavy_check_mark: Typescript
+:heavy_check_mark: JSDocs (documentación)
 
 ### Visite la página web en: 
 
@@ -30,6 +31,7 @@ The Rick and Morty Character Finder is an application for fans of this animated 
 :heavy_check_mark: Redux
 :heavy_check_mark: Redux-thunk
 :heavy_check_mark: Typescript
+:heavy_check_mark: JSDocs (documentation)
 
 ### Visit de website here:
 

@@ -2,6 +2,8 @@ import { TypedUseSelectorHook, useDispatch, useSelector as useReduxSelector } fr
 import { IRootState } from "../../store/store";
 import { agregarFavorito, eliminarFavorito } from "../../actions/personajes.actions";
 import Personaje from "../../types/personaje.types";
+import star from "../../images/star.png";
+import star_filled from "../../images/star-filled.png";
 import './boton-favorito.css';
 
 /**
@@ -21,7 +23,8 @@ const BotonFavorito = (personaje: Personaje) => {
 
     const favoritos = useSelector(state => state.personajes.favoritos);
     const esFavorito = favoritos.find((favorito) => favorito.id === personaje.id);
-    const src = esFavorito ? "/imagenes/star-filled.png" : "/imagenes/star.png";
+    // const src = esFavorito ? "/imagenes/star-filled.png" : "/imagenes/star.png";
+    const src = esFavorito ? `${star_filled}` : `${star}`;
     // console.log(favoritos);
 
     const toggleFavorito = () => {
