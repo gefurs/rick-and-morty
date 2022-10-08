@@ -14,7 +14,7 @@ const Encabezado = () => {
     return <header>
             <div>
                 <div>
-                    <img src={logo} alt="logo"/>
+                    <Link to="/"><img src={logo} alt="logo"/></Link>
                 </div>
                 <nav>
                     <ul>

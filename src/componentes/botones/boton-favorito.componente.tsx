@@ -23,9 +23,7 @@ const BotonFavorito = (personaje: Personaje) => {
 
     const favoritos = useSelector(state => state.personajes.favoritos);
     const esFavorito = favoritos.find((favorito) => favorito.id === personaje.id);
-    // const src = esFavorito ? "/imagenes/star-filled.png" : "/imagenes/star.png";
     const src = esFavorito ? `${star_filled}` : `${star}`;
-    // console.log(favoritos);
 
     const toggleFavorito = () => {
         if(!esFavorito) {

@@ -148,7 +148,6 @@ export const buscarPersonajesThunk = (name: string, page: number): BuscarPersona
         dispatch(buscarPersonajes(name, page));
         try{
             const response = await buscarPersonajesAPI(name, page);
-            // console.log(response);
             dispatch(buscarPersonajesSuccess(page, response.info.pages, response.results));
         }catch(error){
             const errorMessage = new Error("No se encontró el personaje");
@@ -163,7 +162,6 @@ export const listarPersonajesThunk = (page: number): ListarPersonajesThunkAction
     return async (dispatch, getState) => {
         try {
             const response = await listarPersonajesAPI(page);
-            // console.log(response.results);
             dispatch(listarPersonajes(page, response.info.pages, response.results));
         } catch (error) {
             const errorMessage = new Error("No se encontró el personaje");
