@@ -27,6 +27,11 @@
     font-size: 32px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .episodios-grilla {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import logo from "../../images/logo.png";
 import './encabezado.css';
 
 /**
@@ -13,7 +14,8 @@ const Encabezado = () => {
     return <header>
             <div>
                 <div>
-                    <h2>Examen Final de Frontend IV</h2>
+                    <img src={logo} alt="logo"/>
+                    {/* <h2>Examen Final de Frontend IV</h2> */}
                 </div>
                 <nav>
                     <ul>

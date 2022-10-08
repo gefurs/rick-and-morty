@@ -1,7 +1,8 @@
-// import { useEffect } from "react";
-// import { buscarCapituloThunk } from "../actions/capitulos.actions";
+import { useState, useEffect } from "react";
+import { buscarCapituloAPI } from "../services/capitulos.services";
 import { TypedUseSelectorHook, useDispatch, useSelector as useReduxSelector } from "react-redux";
 import { IRootState } from "../store/store";
+import Capitulo from "../types/capitulo.type";
 import BotonFavorito from "../componentes/botones/boton-favorito.componente";
 import TarjetaEpisodio from "../componentes/episodios/tarjeta-episodio.componente";
 
@@ -19,16 +20,35 @@ import "./Detalle.css";
  */
 const PaginaDetalle = () => {
 
-    // const dispatch = useDispatch();
-    // dispatch(buscarCapituloThunk(id));
+    const [capitulos, setCapitulos] = useState<Capitulo[]>([]);
 
     const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 
     const personaje = useSelector(state => state.personajes.personaje);
-    // console.log(personaje.episode);
+    const endpoints = personaje.episode;
+    // console.log(endpoints)
 
-    // const capitulo = useSelector(state => state.capitulo.capitulo);
-    // console.log(capitulo)
+    const obtenerCapitulos = async (urlsArray: string[]): Promise<Capitulo[]> => {
+        const promesas = urlsArray.map(async (url: string) => await buscarCapituloAPI(url)
+        .then(
+            (response: Capitulo) => response
+        ))
+        // console.log(promesas)
+        const capitulos = await Promise.all(promesas).then((response: Capitulo[]) => response)
+        // console.log(capitulos)
+        setCapitulos(capitulos);
+        return capitulos;
+    }
+
+    useEffect(() => {
+        obtenerCapitulos(endpoints);
+    }, [endpoints]);
+
+    console.log(capitulos)
+
+    const volver = () => {
+        window.history.back();
+    }
 
     return <div className="container">
         <h3>{personaje.name}</h3>
@@ -41,12 +61,16 @@ const PaginaDetalle = () => {
                 <p>Genero: {personaje.gender}</p>
                 </div>
                 <BotonFavorito {...personaje} />
+                
+            </div>
+            <div className={"button-container"}>
+                <button onClick={volver} className={"primary"} >Volver</button>
             </div>
         </div>
-        <h4>Lista de episodios donde apareció el personaje</h4>
+        <h4>Lista de episodios donde apareció el personaje:</h4>
         <div className={"episodios-grilla"}>
-            {personaje.episode.map((episode, index) => {
-                return <TarjetaEpisodio key={index} capitulo={episode} />
+            {capitulos.map((capitulo) => {
+                return <TarjetaEpisodio key={capitulo.id} capitulo={capitulo} />
             })}
         </div>
     </div>

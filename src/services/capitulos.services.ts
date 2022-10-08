@@ -5,10 +5,9 @@ import Capitulo from "../types/capitulo.type";
 //  * @param id - El id del capítulo seleccionado.
 //  * @returns Un objeto capítulo.
 //  */
-export const buscarCapituloAPI = async (id?: number): Promise<Capitulo> => {
-    
-    const response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+export const buscarCapituloAPI = async (url?: string): Promise<Capitulo> => {
+    const response = await fetch(`${url}`);
     const result = await response.json();
-    console.log(result);
+    // console.log(result);
     return result;
 }

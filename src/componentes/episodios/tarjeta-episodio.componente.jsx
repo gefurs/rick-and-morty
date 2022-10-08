@@ -10,12 +10,11 @@ import './tarjeta-episodio.css';
 const TarjetaEpisodio = ({ capitulo }) => {
 
     return <div className="tarjeta-episodio">
-            <h4>{capitulo}</h4>
-            {/* <h4>Close Rick-counters of the Rick Kind</h4>
+            <h4>{capitulo.name}</h4>
             <div>
-                <span>S01E01</span>
-                <span>Lanzado el: April 7, 2014</span>
-            </div>   */}
+                <span>{capitulo.episode}</span>
+                <span>Lanzado el: {capitulo.air_date}</span>
+            </div>  
     </div>
 }
 
