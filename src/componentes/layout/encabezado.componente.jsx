@@ -15,17 +15,15 @@ const Encabezado = () => {
             <div>
                 <div>
                     <img src={logo} alt="logo"/>
-                    {/* <h2>Examen Final de Frontend IV</h2> */}
                 </div>
                 <nav>
                     <ul>
                         <li><Link to="/">Inicio</Link></li>
                         <li><Link to="/favoritos">Favoritos</Link></li>
-                        {/* <li><Link to="/detalle">Detalle</Link></li> */}
                     </ul>
                 </nav>
             </div>
     </header>
 }
 
-export default Encabezado
+export default Encabezado;

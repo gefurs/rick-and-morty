@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { buscarCapituloAPI } from "../services/capitulos.services";
-import { TypedUseSelectorHook, useDispatch, useSelector as useReduxSelector } from "react-redux";
+import { TypedUseSelectorHook, useSelector as useReduxSelector } from "react-redux";
 import { IRootState } from "../store/store";
 import Capitulo from "../types/capitulo.type";
 import BotonFavorito from "../componentes/botones/boton-favorito.componente";
@@ -10,8 +10,6 @@ import "./Detalle.css";
 
 /**
  * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
- * 
- * EL TRABAJO SOBRE ESTE ARCHIVO ES OPCIONAL Y NO ES REQUISITO DE APROBACION
  * 
  * Uso: 
  * ``` <PaginaDetalle /> ```
@@ -26,16 +24,13 @@ const PaginaDetalle = () => {
 
     const personaje = useSelector(state => state.personajes.personaje);
     const endpoints = personaje.episode;
-    // console.log(endpoints)
 
     const obtenerCapitulos = async (urlsArray: string[]): Promise<Capitulo[]> => {
         const promesas = urlsArray.map(async (url: string) => await buscarCapituloAPI(url)
         .then(
             (response: Capitulo) => response
         ))
-        // console.log(promesas)
         const capitulos = await Promise.all(promesas).then((response: Capitulo[]) => response)
-        // console.log(capitulos)
         setCapitulos(capitulos);
         return capitulos;
     }

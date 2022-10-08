@@ -10,7 +10,6 @@ export const listarPersonajesAPI = async (page: number): Promise<Response> => {
     
     const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`);
     const result = await response.json();
-    // console.log(result);
     return result;
 }
 
@@ -28,6 +27,5 @@ export const buscarPersonajesAPI = async (nombre?: string, page?: number): Promi
 
     const response = await fetch(`https://rickandmortyapi.com/api/character/${params}&page=${page}`);
     const result = await response.json();
-    // console.log(result);
     return result;
 }

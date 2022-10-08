@@ -1,5 +1,4 @@
 import { FC } from "react";
-import {useDispatch} from "react-redux";
 import { TypedUseSelectorHook, useSelector as useReduxSelector } from "react-redux";
 import { IRootState } from "../../store/store";
 import './paginacion.css';

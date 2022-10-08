@@ -38,7 +38,6 @@ const PaginaInicio = () => {
     const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 
     const personajes = useSelector(state => state.personajes.personajes);
-    // console.log(personajes);
 
     return <div className="container">
         <div className="actions">

@@ -23,7 +23,6 @@ const PaginaFavoritos: FC = () => {
     const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 
     const favoritos = useSelector(state => state.personajes.favoritos);
-    // console.log(favoritos);
 
     return <div className="container">
         <div className="actions">
